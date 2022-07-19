@@ -12,7 +12,7 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
-        self.head = self.segments[0]
+        self.head: Turtle = self.segments[0]
 
     def create_snake(self):
         for position in STARTING_POSITION:
@@ -20,6 +20,7 @@ class Snake:
             new_segment.color("white")
             new_segment.penup()
             new_segment.goto(position)
+            new_segment.speed("fastest")
             self.segments.append(new_segment)
 
     def move(self):
