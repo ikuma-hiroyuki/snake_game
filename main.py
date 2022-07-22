@@ -37,14 +37,14 @@ while game_is_on:
 
     # 壁に接触
     if (snake.head.xcor() > 280 or snake.head.xcor() < -280) or (snake.head.ycor() > 280 or snake.head.ycor() < -280):
-        game_is_on = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
 
     # 自身に接触
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
 # 終了
 screen.exitonclick()
